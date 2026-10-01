@@ -204,7 +204,17 @@ net_sales = trend(7일 중심이동평균) + weekday_effect(요일효과, 합 0)
 streamlit run app.py
 ```
 
-사이드바에서 기간·휴무일 포함 여부를 필터링할 수 있고, 7개 탭(전처리 요약 · 일별 추이 · 월별 분석 · 요일 분석 · 국가 분석 · 시계열 분해 · 예측 모형 비교 · 이상치)에서 위 분석을 모두 인터랙티브 차트(Plotly)로 다시 확인할 수 있습니다. 예측 모형 비교 탭은 11월뿐 아니라 실제 데이터가 있는 12월 1~8일까지 확장해 보여줍니다.
+사이드바에서 기간·휴무일 포함 여부를 필터링할 수 있고, 8개 탭(전처리 요약 · 일별 추이 · 월별 분석 · 요일 분석 · 국가 분석 · 시계열 분해 · 예측 모형 비교 · 이상치)에서 위 분석을 모두 인터랙티브 차트(Plotly)로 다시 확인할 수 있습니다. 예측 모형 비교 탭은 11월뿐 아니라 실제 데이터가 있는 12월 1~8일까지 확장해 보여주고, SES/Holt/Holt-Winters/SARIMA 4개 모델을 함께 비교합니다.
+
+### 화면 캡처
+
+| 전처리 요약 (KPI + 제외 로그) | 국가 분석 |
+|---|---|
+| ![대시보드 개요](outputs/figures/dashboard/dashboard_overview.jpg) | ![대시보드 국가 분석](outputs/figures/dashboard/dashboard_country.jpg) |
+
+| 시계열 분해 (월 선택) | 예측 모형 비교 |
+|---|---|
+| ![대시보드 시계열 분해](outputs/figures/dashboard/dashboard_decomposition.jpg) | ![대시보드 예측 모형 비교](outputs/figures/dashboard/dashboard_forecast_compare.jpg) |
 
 ---
 
