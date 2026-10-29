@@ -10,11 +10,16 @@
 
 ```bash
 pip install -r requirements.txt
-python analysis/01_preprocess.py   # 원본 -> data/processed/daily_sales.csv 생성 (이후 스크립트의 입력)
-streamlit run app.py               # 인터랙티브 보고서 실행
+streamlit run app.py               # 클론 직후 바로 실행 가능 (가공 결과 data/processed/daily_sales.csv 포함)
 ```
 
-`analysis/` 아래 스크립트는 `01`부터 번호 순서대로 실행하도록 작성되어 있으며, 각 스크립트는 같은 입력으로 다시 실행해도 같은 결과가 나옵니다. 원본(`data/raw/`)은 어떤 스크립트도 수정하지 않습니다.
+분석을 처음부터 다시 재현하려면 **프로젝트 루트에서 `analysis/01`~`13`을 번호 순서대로 모두** 실행하세요.
+
+```bash
+for f in analysis/*.py; do python "$f"; done
+```
+
+`01_preprocess.py`가 `daily_sales.csv`를 새로 만들고, 이후 스크립트(`03`, `07`)가 이동평균·분해 열을 차례로 추가하므로 **`01`만 실행하고 앱을 켜면 오류가 납니다.** 각 스크립트는 같은 입력으로 다시 실행해도 같은 결과가 나오며, 원본(`data/raw/`)은 어떤 스크립트도 수정하지 않습니다. 그래프의 한글은 Windows 기본 폰트(맑은 고딕) 기준이라, 다른 OS에서 `analysis/` 스크립트로 그래프를 다시 만들면 한글이 깨질 수 있습니다(앱·커밋된 PNG는 영향 없음).
 
 ## 프로젝트 구조
 
